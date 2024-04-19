@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercice 1</title>
+  <style>
+    body{
+        background-color: rgb(22, 22, 22);
+        color: rgb(184, 184, 184);
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 350px;
+    }
+</style>
+<script>
+  function f1() {
+    if (document.getElementById("femme").checked) {
+      let select = document.createElement("select");
+      let option1 = document.createElement("option");
+      option1.value = "mademoiselle";
+      option1.text = "Mademoiselle";
+      let option2 = document.createElement("option");
+      option2.value = "madame";
+      option2.text = "Madame";
+      select.appendChild(option1);
+      select.appendChild(option2);
+      document.getElementById("genre").appendChild(select);
+    } else {
+      document.getElementById("genre").innerHTML = "";
+    }
+  }
+</script>
+</head>
+<body>
+  <input type="radio" name="genre" id="femme" onclick="f1()"/> Femme
+  <input type="radio" name="genre"/> Homme
+  <div id="genre"></div>
+</body>
+</html>
